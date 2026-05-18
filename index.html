@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Подтверждение присутствия</title>
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Georgia", serif;
+    background: linear-gradient(180deg, #f7efe7 0%, #fdfaf7 100%);
+    color: #2d2d2d;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 480px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 28px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top right, rgba(222, 184, 135, 0.12), transparent 35%),
+      radial-gradient(circle at bottom left, rgba(210, 180, 140, 0.10), transparent 35%);
+    pointer-events: none;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #9c7b5f;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: #2f2a26;
+  }
+
+  .divider {
+    width: 70px;
+    height: 1px;
+    background: #c9b39c;
+    margin: 0 auto 24px;
+  }
+
+  .text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #4d433c;
+    margin-bottom: 30px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d9c8b5;
+    border-radius: 14px;
+    font-size: 16px;
+    outline: none;
+    background: #fffdfb;
+  }
+
+  input[type="text"]:focus {
+    border-color: #b99778;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .option {
+    position: relative;
+  }
+
+  .option input {
+    display: none;
+  }
+
+  .option label {
+    display: block;
+    padding: 16px;
+    border: 1px solid #d9c8b5;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    background: #fffdfb;
+    font-size: 16px;
+  }
+
+  .option label:hover {
+    border-color: #b99778;
+    transform: translateY(-1px);
+  }
+
+  .option input:checked + label {
+    border-color: #9c7b5f;
+    background: #f8f0e8;
+  }
+
+  button {
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #9c7b5f;
+    color: white;
+    transition: 0.3s ease;
+  }
+
+  button:hover {
+    background: #87664c;
+  }
+
+  .success {
+    display: none;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #4d433c;
+    padding: 20px 0;
+  }
+
+  .footer {
+    margin-top: 24px;
+    font-size: 14px;
+    color: #8a7a6a;
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      padding: 32px 22px;
+    }
+
+    h1 {
+      font-size: 34px;
+    }
+
+    .text {
+      font-size: 16px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="content">
+    <div class="subtitle">Ұзату тойы</div>
+    <h1>Сырға салу</h1>
+    <div class="divider"></div>
+
+    <div id="formContainer">
+      <p class="text">
+        Дорогие гости!<br>
+        Пожалуйста, подтвердите ваше присутствие на нашем торжестве.
+      </p>
+
+      <form id="rsvpForm">
+        <div class="form-group">
+          <input
+            type="text"
+            id="guestName"
+            placeholder="Ваше имя"
+            required
+          >
+        </div>
+
+        <div class="options">
+          <div class="option">
+            <input type="radio" id="yes" name="attendance" value="Буду присутствовать" required>
+            <label for="yes">С радостью буду присутствовать</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" id="no" name="attendance" value="Не смогу прийти">
+            <label for="no">К сожалению, не смогу прийти</label>
+          </div>
+        </div>
+
+        <button type="submit">Отправить ответ</button>
+      </form>
+    </div>
+
+    <div id="successMessage" class="success">
+      Спасибо за ваш ответ!<br>
+      Будем рады разделить этот день вместе с вами.
+    </div>
+
+    <div class="footer">
+      С любовью, семья Гүлнәз
+    </div>
+  </div>
+</div>
+
+<script>
+const form = document.getElementById('rsvpForm');
+const formContainer = document.getElementById('formContainer');
+const successMessage = document.getElementById('successMessage');
+
+const SCRIPT_URL =
+  'https://script.google.com/macros/s/AKfycbxMjYXSEp75Y2pKyVPzWLSOnEZ3OC4uD028GB9kZhdv03Z-Hw8Be0xn2NV2dEv7TrDgHA/exec';
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const submitButton = form.querySelector('button');
+  submitButton.disabled = true;
+  submitButton.textContent = 'Отправка...';
+
+  const name = document.getElementById('guestName').value;
+  const attendance = document.querySelector('input[name="attendance"]:checked').value;
+
+  const data = new URLSearchParams();
+  data.append('name', name);
+  data.append('attendance', attendance);
+
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: data
+  });
+
+  formContainer.style.display = 'none';
+  successMessage.style.display = 'block';
+});
+</script>
+
+</body>
+</html>
