@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Сырға салу — Приглашение</title>
+<title>Гүлнәз — Сырға салу және ұзату тойы</title>
 
 <style>
   * {
@@ -34,7 +33,7 @@
 
   .hero-image {
     width: 100%;
-    height: 520px;
+    height: 560px;
     background-image: url('bride.png');
     background-size: cover;
     background-position: center top;
@@ -105,6 +104,20 @@
     font-size: 14px;
   }
 
+  .message {
+    max-width: 540px;
+    margin: 0 auto 34px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #5a4b40;
+  }
+
+  .main-name {
+    font-size: 24px;
+    color: #b8893b;
+    letter-spacing: 1px;
+  }
+
   .info-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -143,12 +156,16 @@
     font-weight: 600;
   }
 
-  .message {
-    max-width: 520px;
-    margin: 0 auto 34px;
+  .owners {
+    margin: 6px auto 38px;
     font-size: 18px;
-    line-height: 1.75;
+    line-height: 1.8;
     color: #5a4b40;
+  }
+
+  .owners strong {
+    color: #382d25;
+    font-size: 20px;
   }
 
   .rsvp-section {
@@ -175,6 +192,15 @@
   .form-wrap {
     max-width: 440px;
     margin: 0 auto;
+  }
+
+  .field-label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    color: #6a574a;
+    margin-bottom: 7px;
+    letter-spacing: 0.5px;
   }
 
   input[type='text'],
@@ -295,7 +321,7 @@
     }
 
     .hero-image {
-      height: 460px;
+      height: 500px;
       background-position: center top;
     }
 
@@ -327,11 +353,15 @@
     .message {
       font-size: 16px;
     }
+
+    .rsvp-title {
+      font-size: 24px;
+    }
   }
 
   @media (max-width: 390px) {
     .hero-image {
-      height: 420px;
+      height: 440px;
     }
 
     .script-title {
@@ -349,19 +379,21 @@
   <main class="content">
     <div class="ornament">❧</div>
 
-    <div class="small-title">Құрметті қонақтар!</div>
+    <div class="small-title">Құрметті ағайын-туыс, құда-жекжат, дос-жарандар!</div>
 
-    <h1>СІЗДЕРДІ ГҮЛНӘЗДІҢ</h1>
-    <div class="script-title">Сырға салу салтанатына</div>
-    <div class="invite-word">шақырамыз</div>
+    <h1>СІЗДЕРДІ АЯУЛЫ ҚЫЗЫМЫЗ</h1>
+    <div class="script-title">Гүлнәздің</div>
+    <div class="invite-word">сырға салу және ұзату тойыныңқадірлі қонағы болуға шақырамыз!</div>
 
     <div class="divider"></div>
+
+    
 
     <section class="info-grid">
       <div class="info-item">
         <div class="icon">☷</div>
         <div class="info-name">Күні</div>
-        <div class="info-value">20.06.2025<br>Жұма</div>
+        <div class="info-value">20 маусым<br>2026 жыл</div>
       </div>
 
       <div class="info-item">
@@ -372,21 +404,21 @@
 
       <div class="info-item">
         <div class="icon">⌖</div>
-        <div class="info-name">Орны</div>
-        <div class="info-value">“Мұнайшы”<br>мейрамханасы</div>
+        <div class="info-name">Өтетін орны</div>
+        <div class="info-value">«Мұнайшы»<br>мейрамханасы</div>
       </div>
 
       <div class="info-item">
         <div class="icon">▥</div>
         <div class="info-name">Мекен-жайы</div>
-        <div class="info-value">29А ш/а, 21</div>
+        <div class="info-value">29А шағын аудан,<br>21</div>
       </div>
     </section>
 
-    <p class="message">
-      Қуанышымызды бөлісіп, ақ тілегіңізбен келіп,<br>
-      ұмытылмас сәттің куәсі болуларыңызды сұраймыз!<br>
-      Сіздерсіз бұл күн — толық емес.
+    <p class="owners">
+      Той иелері:<br>
+      <strong>Аманжан – Света</strong><br>
+      <strong>Берік – Айгерім</strong>
     </p>
 
     <div class="divider"></div>
@@ -396,10 +428,11 @@
       <div class="flower-right">✿</div>
 
       <h2 class="rsvp-title">ҚАТЫСАТЫНЫҢЫЗДЫ РАСТАҢЫЗ</h2>
-      <p class="rsvp-subtitle">Өтінеміз, жауап беріңіздер.</p>
+      <p class="rsvp-subtitle">Қатысатыныңызды алдын ала растауыңызды сұраймыз</p>
 
       <div id="formContainer" class="form-wrap">
         <form id="rsvpForm">
+          <label class="field-label" for="guestName">Атыңыз</label>
           <input
             type="text"
             id="guestName"
@@ -419,20 +452,22 @@
             </div>
           </div>
 
+          <label class="field-label" for="guestCount">Жалпы қонақ саны</label>
           <input
             type="number"
             id="guestCount"
-              min="1"
-              max="20"
-              value="1"
-              placeholder="Жалпы қонақ саны"
-              required
->
+            min="1"
+            max="20"
+            value="1"
+            placeholder="Қанша адам келесіздер?"
+            required
+          >
 
+          <label class="field-label" for="companions">Кіммен келесіз?</label>
           <input
             type="text"
             id="companions"
-            placeholder="Кіммен келесіз? Мысалы: күйеуім, әйелім, 2 бала"
+            placeholder="Мысалы: күйеуім, әйелім, 2 бала"
           >
 
           <button class="submit-btn" type="submit">ЖАУАП БЕРУ</button>
