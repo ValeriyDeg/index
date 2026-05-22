@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -33,8 +34,8 @@
 
   .hero-image {
     width: 100%;
-    height: 700px;
-    background-image: url('bridge.png');
+    height: 520px;
+    background-image: url('bride.png');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -176,7 +177,8 @@
     margin: 0 auto;
   }
 
-  input[type='text'] {
+  input[type='text'],
+  input[type='number'] {
     width: 100%;
     height: 54px;
     padding: 0 18px;
@@ -189,7 +191,8 @@
     margin-bottom: 16px;
   }
 
-  input[type='text']:focus {
+  input[type='text']:focus,
+  input[type='number']:focus {
     border-color: #b8893b;
   }
 
@@ -416,6 +419,22 @@
             </div>
           </div>
 
+          <input
+            type="number"
+            id="guestCount"
+              min="1"
+              max="20"
+              value="1"
+              placeholder="Жалпы қонақ саны"
+              required
+>
+
+          <input
+            type="text"
+            id="companions"
+            placeholder="Кіммен келесіз? Мысалы: күйеуім, әйелім, 2 бала"
+          >
+
           <button class="submit-btn" type="submit">ЖАУАП БЕРУ</button>
         </form>
       </div>
@@ -436,7 +455,7 @@ const formContainer = document.getElementById('formContainer');
 const successMessage = document.getElementById('successMessage');
 
 const SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbwZNVnUtLlPOPrV1zdL7jh9DFcKmzIend4v1Qa7Z4Co5b6tOKobyrRZd-Kd6OMT7DMJEg/exec';
+  'https://script.google.com/macros/s/AKfycbwIZ3wTZ5vn0ZW_3oLuuWApvbe9oQzkUeh9D-CNFXQ-uEoCyYCnWpmn8kuMqKM75KNU6Q/exec';
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -447,10 +466,14 @@ form.addEventListener('submit', function (e) {
 
   const name = document.getElementById('guestName').value;
   const attendance = document.querySelector('input[name="attendance"]:checked').value;
+  const guestCount = document.getElementById('guestCount').value;
+  const companions = document.getElementById('companions').value || 'Не указано';
 
   const data = new URLSearchParams();
   data.append('name', name);
   data.append('attendance', attendance);
+  data.append('guestCount', guestCount);
+  data.append('companions', companions);
 
   fetch(SCRIPT_URL, {
     method: 'POST',
