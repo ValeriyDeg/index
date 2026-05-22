@@ -18,238 +18,185 @@
 
   body {
     font-family: Georgia, 'Times New Roman', serif;
-    background: #f7efe7;
-    color: #2f2a26;
-    overflow-x: hidden;
+    background: #fbf7f1;
+    color: #382d25;
   }
 
   .page {
-    width: 100%;
-    min-height: 100vh;
-    background:
-      radial-gradient(circle at top left, rgba(255, 213, 190, 0.45), transparent 32%),
-      radial-gradient(circle at bottom right, rgba(197, 154, 116, 0.18), transparent 36%),
-      linear-gradient(180deg, #f8efe7 0%, #fffaf6 45%, #f3e5d8 100%);
-  }
-
-  .section {
-    width: 100%;
-    max-width: 520px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 42px 22px;
-  }
-
-  .hero {
+    background: #fffaf4;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
     overflow: hidden;
-    padding: 26px 20px;
-  }
-
-  .hero::before,
-  .hero::after {
-    content: '';
-    position: absolute;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    background: rgba(214, 178, 143, 0.18);
-    filter: blur(4px);
-    animation: float 7s ease-in-out infinite;
-  }
-
-  .hero::before {
-    top: -60px;
-    left: -80px;
-  }
-
-  .hero::after {
-    right: -90px;
-    bottom: -70px;
-    animation-delay: 1.5s;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(18px); }
-  }
-
-  .hero-card {
-    width: 100%;
-    max-width: 470px;
-    background: rgba(255, 253, 250, 0.84);
-    border: 1px solid rgba(188, 157, 126, 0.35);
-    border-radius: 34px;
-    padding: 34px 24px 30px;
-    box-shadow: 0 24px 70px rgba(93, 62, 40, 0.12);
     position: relative;
-    z-index: 2;
-    backdrop-filter: blur(10px);
   }
 
-  .image-frame {
+  .hero-image {
     width: 100%;
-    height: 360px;
-    border-radius: 28px;
-    background:
-      linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.5)),
-      url('bride.png');
+    height: 520px;
+    background-image: url('bridge.png');
     background-size: cover;
     background-position: center top;
-    margin-bottom: 26px;
-    overflow: hidden;
+    background-repeat: no-repeat;
+  }
+
+  .content {
+    padding: 42px 24px 60px;
+    text-align: center;
     position: relative;
-    box-shadow: inset 0 -60px 70px rgba(248, 239, 231, 0.86);
   }
 
-  .image-frame::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 45%, #fff8f2 100%);
+  .ornament {
+    color: #b8893b;
+    font-size: 28px;
+    margin-bottom: 18px;
   }
 
-  .label {
-    font-size: 13px;
-    letter-spacing: 4px;
+  .small-title {
+    font-size: 14px;
+    letter-spacing: 5px;
     text-transform: uppercase;
-    color: #9d7b5f;
-    margin-bottom: 10px;
+    color: #4b3d34;
+    margin-bottom: 22px;
   }
 
   h1 {
-    font-size: 46px;
-    font-weight: 500;
-    line-height: 1.05;
-    margin-bottom: 12px;
-  }
-
-  .hero-text {
-    font-size: 17px;
-    line-height: 1.65;
-    color: #5c4b40;
-    margin: 0 auto 24px;
-    max-width: 360px;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 50px;
-    padding: 0 26px;
-    border-radius: 999px;
-    background: #9b7658;
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    letter-spacing: 0.3px;
-    border: none;
-    cursor: pointer;
-    transition: 0.25s ease;
-  }
-
-  .btn:hover {
-    background: #805f45;
-    transform: translateY(-1px);
-  }
-
-  .card {
-    background: rgba(255, 253, 250, 0.88);
-    border: 1px solid rgba(188, 157, 126, 0.32);
-    border-radius: 28px;
-    padding: 30px 24px;
-    box-shadow: 0 18px 55px rgba(93, 62, 40, 0.09);
-    text-align: center;
-  }
-
-  .title {
     font-size: 34px;
+    line-height: 1.25;
     font-weight: 500;
+    color: #b8893b;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+
+  .script-title {
+    font-size: 38px;
+    font-style: italic;
+    color: #b8893b;
+    line-height: 1.25;
     margin-bottom: 14px;
   }
 
-  .divider {
-    width: 74px;
-    height: 1px;
-    background: #c8ad92;
-    margin: 0 auto 22px;
+  .invite-word {
+    font-size: 15px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
   }
 
-  .text {
-    font-size: 18px;
-    line-height: 1.75;
-    color: #4d4038;
+  .divider {
+    width: 160px;
+    height: 1px;
+    background: #d5b778;
+    margin: 0 auto 34px;
+    position: relative;
+  }
+
+  .divider::after {
+    content: '❤';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fffaf4;
+    padding: 0 10px;
+    color: #b8893b;
+    font-size: 14px;
   }
 
   .info-grid {
     display: grid;
-    gap: 14px;
-    margin-top: 22px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 22px 0 46px;
+    border-top: 1px solid rgba(184, 137, 59, 0.22);
+    border-bottom: 1px solid rgba(184, 137, 59, 0.22);
   }
 
   .info-item {
-    padding: 18px 16px;
-    border-radius: 20px;
-    background: #fffaf6;
-    border: 1px solid rgba(188, 157, 126, 0.28);
+    padding: 24px 10px;
+    border-right: 1px solid rgba(184, 137, 59, 0.22);
+  }
+
+  .info-item:last-child {
+    border-right: none;
+  }
+
+  .icon {
+    font-size: 30px;
+    color: #b8893b;
+    margin-bottom: 12px;
   }
 
   .info-name {
-    font-size: 13px;
-    letter-spacing: 2.4px;
+    font-size: 12px;
     text-transform: uppercase;
-    color: #9d7b5f;
-    margin-bottom: 7px;
+    letter-spacing: 2px;
+    color: #6a574a;
+    margin-bottom: 12px;
   }
 
   .info-value {
-    font-size: 20px;
-    line-height: 1.35;
-    color: #2f2a26;
+    font-size: 15px;
+    line-height: 1.45;
+    font-weight: 600;
   }
 
-  .route-link {
-    display: inline-block;
-    margin-top: 22px;
-    color: #8a644a;
-    font-size: 16px;
-    text-decoration: underline;
-    text-underline-offset: 4px;
+  .message {
+    max-width: 520px;
+    margin: 0 auto 34px;
+    font-size: 18px;
+    line-height: 1.75;
+    color: #5a4b40;
   }
 
-  .rsvp-card {
-    background: rgba(255, 253, 250, 0.94);
+  .rsvp-section {
+    margin-top: 38px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(184, 137, 59, 0.22);
+    position: relative;
   }
 
-  .form-group {
-    margin: 20px 0 16px;
-    text-align: left;
+  .rsvp-title {
+    font-size: 28px;
+    color: #b8893b;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .rsvp-subtitle {
+    font-size: 15px;
+    color: #6a574a;
+    margin-bottom: 24px;
+  }
+
+  .form-wrap {
+    max-width: 440px;
+    margin: 0 auto;
   }
 
   input[type='text'] {
     width: 100%;
-    padding: 15px 16px;
-    border: 1px solid #d8c5b2;
-    border-radius: 16px;
-    font-size: 16px;
+    height: 54px;
+    padding: 0 18px;
+    border: 1px solid #d6bb84;
+    background: rgba(255, 255, 255, 0.58);
+    border-radius: 4px;
+    font-size: 15px;
     outline: none;
-    background: #fffdfb;
-    font-family: Arial, sans-serif;
+    color: #382d25;
+    margin-bottom: 16px;
   }
 
   input[type='text']:focus {
-    border-color: #9b7658;
+    border-color: #b8893b;
   }
 
   .options {
-    display: grid;
-    gap: 12px;
-    margin-bottom: 22px;
+    border: 1px solid #d6bb84;
+    background: rgba(255, 255, 255, 0.58);
+    margin-bottom: 16px;
   }
 
   .option input {
@@ -257,85 +204,135 @@
   }
 
   .option label {
-    display: block;
-    padding: 16px;
-    border: 1px solid #d8c5b2;
-    border-radius: 16px;
-    background: #fffdfb;
-    color: #3d332d;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
     cursor: pointer;
-    transition: 0.25s ease;
     font-size: 16px;
+    text-align: left;
   }
 
-  .option input:checked + label {
-    border-color: #9b7658;
-    background: #f4e8dc;
+  .option:first-child label {
+    border-bottom: 1px solid rgba(184, 137, 59, 0.25);
+  }
+
+  .circle {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c69b4d;
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .option input:checked + label .circle::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #b8893b;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
   }
 
   .submit-btn {
     width: 100%;
-    height: 54px;
+    height: 58px;
+    background: linear-gradient(135deg, #c7953f, #a7772d);
     border: none;
-    border-radius: 16px;
-    background: #9b7658;
     color: white;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 2px;
     cursor: pointer;
+    border-radius: 4px;
+    font-family: Georgia, 'Times New Roman', serif;
+    box-shadow: 0 12px 30px rgba(166, 119, 45, 0.25);
+  }
+
+  .submit-btn:disabled {
+    opacity: 0.75;
   }
 
   .success {
     display: none;
-    padding: 22px 0 8px;
-    font-size: 19px;
-    line-height: 1.65;
-    color: #4d4038;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #5a4b40;
+    padding: 24px 0;
   }
 
-  .footer {
-    text-align: center;
-    color: #9d7b5f;
-    font-size: 14px;
-    padding: 12px 20px 42px;
+  .thanks {
+    margin-top: 16px;
+    font-size: 15px;
+    color: #7c6758;
   }
 
-  .fade-up {
-    animation: fadeUp 0.85s ease both;
+  .flower-left,
+  .flower-right {
+    position: absolute;
+    bottom: -30px;
+    font-size: 92px;
+    opacity: 0.18;
+    pointer-events: none;
   }
 
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(18px);
+  .flower-left {
+    left: -18px;
+  }
+
+  .flower-right {
+    right: -18px;
+  }
+
+  @media (max-width: 600px) {
+    .page {
+      max-width: 100%;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
-  @media (max-width: 480px) {
-    .hero-card {
-      padding: 24px 16px 24px;
-      border-radius: 28px;
+    .hero-image {
+      height: 460px;
+      background-position: center top;
     }
 
-    .image-frame {
-      height: 300px;
-      border-radius: 22px;
+    .content {
+      padding: 34px 18px 54px;
     }
 
     h1 {
-      font-size: 39px;
+      font-size: 28px;
     }
 
-    .title {
-      font-size: 30px;
+    .script-title {
+      font-size: 32px;
     }
 
-    .text {
-      font-size: 16.5px;
+    .info-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-item:nth-child(2) {
+      border-right: none;
+    }
+
+    .info-item:nth-child(1),
+    .info-item:nth-child(2) {
+      border-bottom: 1px solid rgba(184, 137, 59, 0.22);
+    }
+
+    .message {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .hero-image {
+      height: 420px;
+    }
+
+    .script-title {
+      font-size: 29px;
     }
   }
 </style>
@@ -344,114 +341,93 @@
 <body>
 <div class="page">
 
-  <section class="hero">
-    <div class="hero-card fade-up">
-      <div class="image-frame"></div>
-      <div class="label">Ұзату тойы</div>
-      <h1>Сырға салу</h1>
-      <p class="hero-text">
-        Гүлнәздің қуанышты күніне арналған ерекше шақыру
-      </p>
-      <a class="btn" href="#invite">Открыть приглашение</a>
-    </div>
-  </section>
+  <div class="hero-image"></div>
 
-  <section class="section" id="invite">
-    <div class="card fade-up">
-      <div class="label">Құрметті қонақтар</div>
-      <h2 class="title">Шақыру</h2>
-      <div class="divider"></div>
-      <p class="text">
-        Сіз(дер) аяулы қызымыз<br>
-        <strong>Гүлнәздің</strong><br>
-        ұзату тойына арналған кешіміздің<br>
-        қадірлі қонағы болуға шақырамыз!
-      </p>
-    </div>
-  </section>
+  <main class="content">
+    <div class="ornament">❧</div>
 
-  <section class="section">
-    <div class="card fade-up">
-      <div class="label">Мереке туралы</div>
-      <h2 class="title">Күні мен орны</h2>
-      <div class="divider"></div>
+    <div class="small-title">Құрметті қонақтар!</div>
 
-      <div class="info-grid">
-        <div class="info-item">
-          <div class="info-name">Дата</div>
-          <div class="info-value">20.06.2025</div>
-        </div>
+    <h1>СІЗДЕРДІ ГҮЛНӘЗДІҢ</h1>
+    <div class="script-title">Сырға салу салтанатына</div>
+    <div class="invite-word">шақырамыз</div>
 
-        <div class="info-item">
-          <div class="info-name">Время</div>
-          <div class="info-value">сағат 12:00</div>
-        </div>
+    <div class="divider"></div>
 
-        <div class="info-item">
-          <div class="info-name">Место</div>
-          <div class="info-value">Мұнайшы мейрамханасы</div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-name">Адрес</div>
-          <div class="info-value">29А ш/а, 21</div>
-        </div>
+    <section class="info-grid">
+      <div class="info-item">
+        <div class="icon">☷</div>
+        <div class="info-name">Күні</div>
+        <div class="info-value">20.06.2025<br>Жұма</div>
       </div>
 
-      <a class="route-link" href="https://2gis.kz" target="_blank">
-        Открыть маршрут
-      </a>
-    </div>
-  </section>
+      <div class="info-item">
+        <div class="icon">◷</div>
+        <div class="info-name">Уақыты</div>
+        <div class="info-value">12:00</div>
+      </div>
 
-  <section class="section" id="rsvp">
-    <div class="card rsvp-card fade-up">
-      <div class="label">RSVP</div>
-      <h2 class="title">Подтвердите присутствие</h2>
-      <div class="divider"></div>
+      <div class="info-item">
+        <div class="icon">⌖</div>
+        <div class="info-name">Орны</div>
+        <div class="info-value">“Мұнайшы”<br>мейрамханасы</div>
+      </div>
 
-      <div id="formContainer">
-        <p class="text">
-          Пожалуйста, отметьте, сможете ли вы присутствовать на нашем торжестве.
-        </p>
+      <div class="info-item">
+        <div class="icon">▥</div>
+        <div class="info-name">Мекен-жайы</div>
+        <div class="info-value">29А ш/а, 21</div>
+      </div>
+    </section>
 
+    <p class="message">
+      Қуанышымызды бөлісіп, ақ тілегіңізбен келіп,<br>
+      ұмытылмас сәттің куәсі болуларыңызды сұраймыз!<br>
+      Сіздерсіз бұл күн — толық емес.
+    </p>
+
+    <div class="divider"></div>
+
+    <section class="rsvp-section" id="rsvp">
+      <div class="flower-left">✿</div>
+      <div class="flower-right">✿</div>
+
+      <h2 class="rsvp-title">ҚАТЫСАТЫНЫҢЫЗДЫ РАСТАҢЫЗ</h2>
+      <p class="rsvp-subtitle">Өтінеміз, жауап беріңіздер.</p>
+
+      <div id="formContainer" class="form-wrap">
         <form id="rsvpForm">
-          <div class="form-group">
-            <input
-              type="text"
-              id="guestName"
-              placeholder="Ваше имя"
-              required
-            >
-          </div>
+          <input
+            type="text"
+            id="guestName"
+            placeholder="Атыңызды жазыңыз"
+            required
+          >
 
           <div class="options">
             <div class="option">
-              <input type="radio" id="yes" name="attendance" value="Буду присутствовать" required>
-              <label for="yes">С радостью буду присутствовать</label>
+              <input type="radio" id="yes" name="attendance" value="Қатысамын" required>
+              <label for="yes"><span class="circle"></span> Қатысамын</label>
             </div>
 
             <div class="option">
-              <input type="radio" id="no" name="attendance" value="Не смогу прийти">
-              <label for="no">К сожалению, не смогу прийти</label>
+              <input type="radio" id="no" name="attendance" value="Қатыса алмаймын">
+              <label for="no"><span class="circle"></span> Қатыса алмаймын</label>
             </div>
           </div>
 
-          <button class="submit-btn" type="submit">Отправить ответ</button>
+          <button class="submit-btn" type="submit">ЖАУАП БЕРУ</button>
         </form>
       </div>
 
       <div id="successMessage" class="success">
-        Спасибо за ваш ответ!<br>
-        Ваше подтверждение отправлено 🤍
+        Рақмет!<br>
+        Жауабыңыз сәтті жіберілді 🤍
       </div>
-    </div>
-  </section>
 
-  <div class="footer">
-    С любовью, семья Гүлнәз
-  </div>
-
+      <div class="thanks">♥ Алдын ала рақмет!</div>
+    </section>
+  </main>
 </div>
 
 <script>
@@ -460,14 +436,14 @@ const formContainer = document.getElementById('formContainer');
 const successMessage = document.getElementById('successMessage');
 
 const SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbxMjYXSEp75Y2pKyVPzWLSOnEZ3OC4uD028GB9kZhdv03Z-Hw8Be0xn2NV2dEv7TrDgHA/exec';
+  'https://script.google.com/macros/s/AKfycbwZNVnUtLlPOPrV1zdL7jh9DFcKmzIend4v1Qa7Z4Co5b6tOKobyrRZd-Kd6OMT7DMJEg/exec';
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
   const submitButton = form.querySelector('button');
   submitButton.disabled = true;
-  submitButton.textContent = 'Отправка...';
+  submitButton.textContent = 'Жіберілуде...';
 
   const name = document.getElementById('guestName').value;
   const attendance = document.querySelector('input[name="attendance"]:checked').value;
