@@ -78,8 +78,8 @@
   }
   h1 {
     font-family: 'Ceremonious-one', serif;
-    font-size: 100px;
-    line-height: 1;
+    font-size: 60px;
+    line-height: 1.25;
     font-weight: 500;
     color: #b8893b;
     letter-spacing: 5px;
@@ -120,6 +120,51 @@
     font-size: 14px;
   }
 
+  .timeline-section {
+  margin: 40px 0;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  text-align: left;
+
+  padding: 18px;
+  border: 1px solid rgba(184, 137, 59, 0.18);
+  background: rgba(255,255,255,0.55);
+}
+
+.timeline-time {
+  min-width: 74px;
+
+  font-size: 24px;
+  font-weight: 600;
+  color: #b8893b;
+
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.timeline-title {
+  font-size: 19px;
+  color: #382d25;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.timeline-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6a574a;
+}
+
   .message {
     max-width: 540px;
     margin: 0 auto 34px;
@@ -146,10 +191,7 @@
   .info-item {
     padding: 24px 10px;
     border-right: 1px solid rgba(184, 137, 59, 0.22);
-  }
-
-  .info-item:last-child {
-    border-right: none;
+    border-left: 1px solid rgba(184, 137, 59, 0.22);
   }
 
   .icon {
@@ -193,7 +235,7 @@
 
   .rsvp-title {
     font-family: 'Ceremonious-one', serif;
-    font-size: 45px;
+    font-size: 60px;
     color: #b8893b;
     letter-spacing: 5px;
     line-height: 1;
@@ -352,20 +394,17 @@
     }
 
     .script-title {
-      font-size: 24px;
+      font-size: 32px;
     }
 
     .info-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .info-item:nth-child(2) {
-      border-right: none;
+      grid-template-columns: repeat(1, 1fr);
     }
 
     .info-item:nth-child(1),
     .info-item:nth-child(2) {
       border-bottom: 1px solid rgba(184, 137, 59, 0.22);
+      border-left: 1px solid rgba(184, 137, 59, 0.22);
     }
 
     .message {
@@ -400,21 +439,39 @@
     <div class="small-title">Құрметті ағайын-туыс, құда-жекжат, дос-жарандар!</div>
 
     <h1>Сіздерді аяулы қызымыз Гүлнәздің</h1>
-    <div class="invite-word">сырға салу, қудалық және ұзату тойының қадірлі қонағы болуға шақырамыз!</div>
+    <div class="invite-word">сырға салу, қудалық және ұзату тойыныңқадірлі қонағы болуға шақырамыз!</div>
 
     <div class="divider"></div>
+
+    <section class="timeline-section">
+
+  <h2 class="rsvp-title">Бағдарлама</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-time">12:00</div>
+
+      <div class="timeline-content">
+        <div class="timeline-title">Сырға салу</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time">13:00</div>
+
+      <div class="timeline-content">
+        <div class="timeline-title">Тойдың басталуы</div>
+      </div>
+    </div>
+
+  </div>
 
     <section class="info-grid">
       <div class="info-item">
         <div class="icon">☷</div>
         <div class="info-name">Күні</div>
         <div class="info-value">20 маусым<br>2026 жыл</div>
-      </div>
-
-      <div class="info-item">
-        <div class="icon">◷</div>
-        <div class="info-name">Уақыты</div>
-        <div class="info-value">12:00</div>
       </div>
 
       <div class="info-item">
